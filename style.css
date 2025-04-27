@@ -1,0 +1,315 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Keep your font */
+    overflow: hidden; /* Prevent horizontal scroll */
+    max-height: 400px;
+}
+
+.hidden {
+    display: none;
+}
+
+.danger {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    margin-left: 10px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.danger:hover {
+    background-color: #c82333;
+}
+
+.topics-bar {
+    display: flex;
+    align-items: center;
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 10px 20px;
+    gap: 15px;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.topics-bar #topics {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.topics-bar div {
+    background-color: #34495e;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.topics-bar div.selected {
+    background-color: #2f6bab;
+    color: #fff;
+}
+
+.topics-bar div:hover {
+    background-color: #4e6a85;
+}
+
+.topics-bar button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.topics-bar button:hover {
+    background-color: #0056b3;
+}
+
+.topics-bar button.danger {
+    background-color: #dc3545;
+}
+
+.topics-bar button.danger:hover {
+    background-color: #c82333;
+}
+
+.brand-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 70px);
+    width: 100vw; /* 100% of viewport width */
+
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #f8f9fa;
+    padding: 10px;
+    box-sizing: border-box;
+    border-right: 1px solid #dee2e6;
+    display: flex; /* Flexbox for sidebar layout */
+    flex-direction: column; /* Stack items vertically */
+}
+
+.sidebar ul#pageList {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    overflow-y: auto;
+    flex-grow: 1; /* Allow list to grow */
+}
+
+.sidebar li {
+    padding: 8px 10px;
+    border-bottom: 1px solid #dee2e6;
+    cursor: pointer;
+    color: #495057;
+}
+
+.sidebar li:hover {
+    background-color: #e9ecef;
+}
+
+.sidebar li.selected {
+    background-color: #a6d1ff;
+    font-weight: bold;
+    color: #1e3a8a;
+}
+
+.sidebar .button-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar button {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    text-align: center;
+}
+
+.sidebar button#deletePageBtn {
+    background-color: #dc3545;
+    margin-bottom: 0;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    width: calc(100vw - 220px);
+    display: flex;
+    flex-direction: column;
+    position: relative; /* For absolute positioning */
+}
+
+#pageTitle {
+    font-size: 24px;
+    margin-bottom: 15px;
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+#pageContent {
+    flex: 1;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: monospace;
+    resize: vertical;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    min-height: calc(100vh - 203px);
+    box-sizing: border-box;
+}
+
+.ql-custom-bg::before {
+    content: "🎨";
+}
+
+
+
+#topics div.selected {
+    background-color: #343a40;
+    font-weight: bold;
+}
+
+.brand-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+/* Customize font labels in the dropdown */
+.ql-picker.ql-font .ql-picker-item[data-value="roboto"]::before {
+    content: "Roboto";
+    font-family: 'Roboto', sans-serif;
+}
+
+.ql-picker.ql-font .ql-picker-item[data-value="open-sans"]::before {
+    content: "Open Sans";
+    font-family: 'Open Sans', sans-serif;
+}
+
+.ql-picker.ql-font .ql-picker-item[data-value="jetbrains-mono"]::before {
+    content: "JetBrains Mono";
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.ql-picker.ql-font .ql-picker-item[data-value="comic-sans"]::before {
+    content: "Comic Sans";
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.ql-picker.ql-font .ql-picker-item[data-value="georgia"]::before {
+    content: "Georgia";
+    font-family: 'Georgia', serif;
+}
+
+.ql-picker.ql-font .ql-picker-item[data-value="arial"]::before {
+    content: "Arial";
+    font-family: 'Arial', sans-serif;
+}
+
+.ql-picker.ql-font .ql-picker-item[data-value="times-new-roman"]::before {
+    content: "Times New Roman";
+    font-family: 'Times New Roman', serif;
+}
+
+.ql-picker.ql-font .ql-picker-item[data-value="consolas"]::before {
+    content: "Consolas";
+    font-family: 'Consolas', monospace;
+}
+
+.ql-font-roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+.ql-font-open-sans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.ql-font-jetbrains-mono {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.ql-font-comic-sans {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.ql-font-georgia {
+    font-family: Georgia, serif;
+}
+
+.ql-font-arial {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ql-font-times-new-roman {
+    font-family: "Times New Roman", Times, serif;
+}
+
+.ql-font-consolas {
+    font-family: Consolas, monospace;
+}
+
+.login-btn {
+    margin-left: auto;
+    padding: 6px 10px;
+    font-size: 14px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: #218838;
+}
+
+
+
+/* Quill editor sizes */
+.ql-size-8px {
+    font-size: 8px;
+}
+
+.ql-size-12px {
+    font-size: 12px;
+}
+
+.ql-size-16px {
+    font-size: 16px;
+}
+
+.ql-size-24px {
+    font-size: 24px;
+}
+
+.ql-size-32px {
+    font-size: 32px;
+}
